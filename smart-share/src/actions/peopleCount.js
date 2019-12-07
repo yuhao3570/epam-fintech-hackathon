@@ -6,5 +6,5 @@ const setPeopleCount = number => ({
 });
 
 export default {
-  number
+  setPeopleCount
 }

@@ -9,10 +9,32 @@ function setReducer(state, action, pairs) {
   return state;
 }
 
+let mockInfo = [
+  {
+    id: 0,
+    title: 'Fish',
+    count: 0
+  },
+  {
+    id: 1,
+    title: 'Beef',
+    count: 0
+  },
+  {
+    id: 2,
+    title: 'Pork',
+    count: 0
+  },
+  {
+    id: 3,
+    title: 'Vegetable',
+    count: 0
+  }
+]
 
 const rootReducer = combineReducers({
   peopleCount: (state = [], action) => setReducer(state, action, peopleCount),
-  items: (state = [], action) => setReducer(state, action, items),
+  items: (state = mockInfo, action) => setReducer(state, action, items),
   users: (state = [], action) => setReducer(state, action, users),
 });
 
