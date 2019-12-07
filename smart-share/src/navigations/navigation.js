@@ -1,14 +1,15 @@
-import HomeScreen from '../screens/HomeScreen';
+import React from 'react';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import HomeScreen from 'components/HomeScreen';
 
 const RootStack = createStackNavigator(
   {
-    Home: {
-      screen: HomeScreen,
-    },
+    Home: HomeScreen,
   },
   {
     initialRouteName: 'Home',
-    headerMode: 'none',
+    headerMode: 'none'
   },
 );
 

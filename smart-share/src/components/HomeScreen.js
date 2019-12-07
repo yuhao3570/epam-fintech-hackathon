@@ -1,9 +1,9 @@
+import React from 'react';
 import { View, Button, Text} from 'native-base';
 
 export default function HomeScreen({ navigation }){
+  console.log('haha');
   return (
-    <View>
-      <Button><Text>hello</Text></Button>
-    </View>
+    <Text style={{color: 'red'}}>hello</Text>   
   )
 }
