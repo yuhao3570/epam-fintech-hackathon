@@ -1,8 +1,8 @@
-import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import HomeScreen from 'components/HomeScreen';
 import CreateBillScreen from 'components/CreateBillScreen';
+import PhotoUploadScreen from 'components/PhotoUploadScreen';
 
 const RootStack = createStackNavigator(
   {
@@ -18,6 +18,12 @@ const RootStack = createStackNavigator(
         title: 'Create a new bill'
       }),
     }, 
+    PhotoUploadScreen: {
+      screen: PhotoUploadScreen,
+      navigationOptions: () => ({
+        title: 'Upload photo'
+      }),
+    },
   },
   {
     initialRouteName: 'Home',

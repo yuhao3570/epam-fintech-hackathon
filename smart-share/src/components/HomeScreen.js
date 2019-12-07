@@ -15,7 +15,7 @@ export default function HomeScreen({ navigation }){
       </Button>
       <Button 
         style={styles.resourceButton}
-        onPress={() => handelResource('CreateBillScreen')}>
+        onPress={() => navigation.navigate('PhotoUploadScreen')}>
         <Text  style={styles.resourceButtonText}>Extract bill from photo</Text>
       </Button>
     </View>
