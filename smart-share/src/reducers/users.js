@@ -12,8 +12,8 @@ const pairs = {
     }
     return copy;
   },
-  ADD_ALL_ITEMS: (state, action) => {
-    
+  REFRESH_SELECT_PAGE: (state, action) => {
+    return ([...state, {name: `User${state.length + 1}`, selected: []}]);
   }
 }
 

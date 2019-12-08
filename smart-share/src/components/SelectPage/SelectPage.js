@@ -7,20 +7,19 @@ import ItemCard from './ItemCard';
 import actions from 'actions/users';
 import itemActions from 'actions/items';
 
-function SelectPage({ addNewUser, itemInfo, users, peopleCount, updateItemCount, navigation }) {
+function SelectPage({ addNewUser, itemInfo, users, peopleCount, updateItemCount, navigation, refreshSelectPage }) {
   const [refresh, setRefresh] = useState(false);
-  
+
   useEffect(() => {
     addNewUser()
   }, [addNewUser]);
 
   function handleVerify() {
-    console.log(users.length, peopleCount);
     if (users.length === peopleCount) {
       updateItemCount(users);
       navigation.navigate('ResultScreen');
     } else {
-      setRefresh(true);
+      addNewUser();
     }
 
   }
@@ -39,10 +38,8 @@ function SelectPage({ addNewUser, itemInfo, users, peopleCount, updateItemCount,
             {Object.keys(itemInfo).map((key) =>
               <ItemCard id={key} key={`item ${key}`} userId={users.length - 1} />
             )}
-            <Button block style={{ backgroundColor: 'rgb(14, 45, 72)', borderRadius: 10, marginBottom: 24 }} onPress={handleVerify}>
-              <TouchableOpacity >
-                <Text style={{ color: 'white' }}>Verify</Text>
-              </TouchableOpacity>
+            <Button block style={{ backgroundColor: 'rgb(14, 45, 72)', borderRadius: 10, marginBottom: 24 }} onPress={() => handleVerify()}>
+              <Text style={{ color: 'white' }}>Verify</Text>
             </Button>
           </View>
         </ScrollView>
@@ -59,7 +56,8 @@ const mapStateToProps = ({ items, users, peopleCount }) => ({
 
 const mapDispatchToProps = dispatch => ({
   addNewUser: () => dispatch(actions.addNewUser),
-  updateItemCount: (users) => dispatch(itemActions.updateItemCount(users))
+  updateItemCount: (users) => dispatch(itemActions.updateItemCount(users)),
+  refreshSelectPage: () => dispatch(actions.refreshSelectPage)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SelectPage);

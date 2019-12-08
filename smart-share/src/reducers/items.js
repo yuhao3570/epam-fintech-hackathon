@@ -13,9 +13,9 @@ const pairs = {
   UPDATE_ITEM_COUNT: (state, action) => {
     let copy = _.cloneDeep(state);
     const selected = action.payload.users;
-    Object.keys(selected).map(oneUser => {
+    selected.map((oneUser, index) => {
       oneUser.selected.map(item => {
-        copy[item].count++;
+        copy[item].count = copy[item].count + 1;
       });
     });
     return copy;
