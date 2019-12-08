@@ -2,13 +2,13 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   photoUploadView: {
-    marginTop: 100,
+    marginTop: 50,
     justifyContent: 'space-around',
     alignItems: 'center'
   },
   uploadedImage: {
-    width: 200,
-    height: 300,
+    width: 250,
+    height: 400,
     marginBottom: 30,
     resizeMode: 'contain'
   },

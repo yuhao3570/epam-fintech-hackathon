@@ -41,14 +41,12 @@ function PhotoUploadScreen({navigation, parseBillImage}) {
       manipResult.uri=result.uri;
       setImage(manipResult);
     }
-
   };
 
   const sendImageForExtraction= () => {
     // console.log(image);
     parseBillImage(image.base64);
     navigation.navigate('CreateBillScreen');
-
   }
 
   return (

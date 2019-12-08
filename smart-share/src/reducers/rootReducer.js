@@ -9,7 +9,6 @@ function setReducer(state, action, pairs) {
   return state;
 }
 
-
 const rootReducer = combineReducers({
   peopleCount: (state = [], action) => setReducer(state, action, peopleCount),
   items: (state = [], action) => setReducer(state, action, items),

@@ -1,4 +1,5 @@
 const OCR_KEY = '43419a48f388957';
+import TESTBILL from '../testBill';
 
 export default function parsePhotoBillAction(billImage) {
   return async function (dispatch) {
@@ -15,13 +16,12 @@ export default function parsePhotoBillAction(billImage) {
           base64Image: billImage
         })
       });
-      console.log('result', result.body);
 
       const data = await result.json();
       console.log('result', data.ParsedResults);
       dispatch({
         type: 'PARSE_BILL',
-        data,
+        data: data || TESTBILL
       });
     } catch (error) {
       dispatch({

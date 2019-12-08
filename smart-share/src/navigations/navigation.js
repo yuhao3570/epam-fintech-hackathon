@@ -1,8 +1,8 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import HomeScreen from 'components/HomeScreen';
-import CreateBillScreen from 'components/CreateBillScreen';
-import PhotoUploadScreen from 'components/PhotoUploadScreen';
+import CreateBillScreen from 'components/CreateNewBillPage/CreateBillScreen';
+import PhotoUploadScreen from 'components/CreateNewBillPage/PhotoUploadScreen';
 
 const RootStack = createStackNavigator(
   {
