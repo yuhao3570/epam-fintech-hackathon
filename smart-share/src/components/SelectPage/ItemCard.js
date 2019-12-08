@@ -12,7 +12,7 @@ function ItemCard({ id, addOneItem, userId }) {
 	return (
 		<TouchableOpacity activeOpacity={1} onPress={() => {setSelected(!selected); addOneItem(userId, id)}}>
 			<Card style={[styles.card, selected && styles.selectedCard]}>
-				<Text style={styles.contentText}>{id}</Text>
+				<Text style={[styles.contentText, selected && styles.selectedText]}>{id}</Text>
 			</Card>
 		</TouchableOpacity>
 	);
