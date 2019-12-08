@@ -5,7 +5,7 @@ export default function parsePhotoBillAction(billImage) {
   return async function (dispatch) {
     try {
       console.log(billImage);
-      const result = await fetch(`https://api.ocr.space/parse/image`, {
+      const response = await fetch(`https://api.ocr.space/parse/image`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -17,11 +17,11 @@ export default function parsePhotoBillAction(billImage) {
         })
       });
 
-      const data = await result.json();
-      console.log('result', data.ParsedResults);
+      const data = await response.json();
+      const result = data.ParsedResults;
       dispatch({
         type: 'PARSE_BILL',
-        data: data || TESTBILL
+        data: result || TESTBILL
       });
     } catch (error) {
       dispatch({
