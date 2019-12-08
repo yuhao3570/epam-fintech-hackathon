@@ -24,9 +24,14 @@ const addAllItems = userId => ({
   }
 });
 
+const refreshSelectPage = () => ({
+  type: 'REFRESH_SELECT_PAGE'
+})
+
 export default {
   addUser,
   addNewUser,
   addOneItem,
-  addAllItems
+  addAllItems,
+  refreshSelectPage
 }
