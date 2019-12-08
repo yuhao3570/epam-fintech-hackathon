@@ -21,7 +21,7 @@ function CreateBillScreen({ navigation, updatePeopleCount, updateItems, itemInfo
   const navToNextPage = () => {
     updatePeopleCount(parseInt(numberOfPeople));
     updateItems(inputedItems);
-    navigation.navigate('SelectPage');
+    navigation.navigate('ResultScreen');
   }
 
   return (
@@ -46,7 +46,7 @@ function CreateBillScreen({ navigation, updatePeopleCount, updateItems, itemInfo
           />
         )}
       </Content>
-      <Button onPress={navToNextPage}><Text>走</Text></Button>
+      <Button onPress={navToNextPage}><Text>Create</Text></Button>
     </Container>
   );
 }
