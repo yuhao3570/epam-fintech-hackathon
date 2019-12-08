@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Input} from 'native-base';
+import { View, Text, Input, Button} from 'native-base';
 import styles from 'styles/CreateBillScreenStyle';
 
 export default function CreateBillScreen({ navigation }){
@@ -7,6 +7,8 @@ export default function CreateBillScreen({ navigation }){
     <View style={styles.createBillView}>
       <Text >Add later</Text>
       <Input></Input>
+      <Button
+        onPress={()=>{navigation.navigate('SelectPage')}}><Text>走</Text></Button>
     </View>
    
   )
