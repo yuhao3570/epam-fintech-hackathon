@@ -5,6 +5,7 @@ import HomeScreen from 'components/HomeScreen';
 import CreateBillScreen from 'components/CreateNewBillPage/CreateBillScreen';
 import PhotoUploadScreen from 'components/CreateNewBillPage/PhotoUploadScreen';
 import SelectPage from 'components/SelectPage/SelectPage';
+import ResultScreen from 'components/ResultScreen';
 
 const RootStack = createStackNavigator(
   {
@@ -31,8 +32,13 @@ const RootStack = createStackNavigator(
       navigationOptions: () => ({
         title: 'Make your selection'
       }),
+    },
+    ResultScreen: {
+      screen: ResultScreen,
+      navigationOptions: () => ({
+        title: 'Result'
+      }),
     }
-
   },
   {
     initialRouteName: 'Home',
