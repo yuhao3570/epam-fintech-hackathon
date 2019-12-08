@@ -7,6 +7,7 @@ import testBill from '../testBill';
 
 function setReducer(state, action, pairs) {
   if (action.type in pairs) return pairs[action.type](state, action);
+  console.log(state);
   return state;
 }
 
