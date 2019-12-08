@@ -21,7 +21,7 @@ function CreateBillScreen({ navigation, updatePeopleCount, updateItems, itemInfo
   const navToNextPage = () => {
     updatePeopleCount(parseInt(numberOfPeople));
     updateItems(inputedItems);
-    navigation.navigate('ResultScreen');
+    navigation.navigate('SelectPage');
   }
 
   return (
