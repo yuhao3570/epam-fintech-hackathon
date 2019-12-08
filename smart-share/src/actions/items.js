@@ -5,6 +5,11 @@ const setItems = items => ({
   }
 });
 
+const getItemsInfo = () => ({
+  type: 'GET_ITEMS_INFO'
+});
+
 export default {
-  setItems
+  setItems,
+  getItemsInfo
 }

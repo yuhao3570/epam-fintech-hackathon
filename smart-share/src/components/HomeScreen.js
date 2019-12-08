@@ -1,9 +1,23 @@
 import React from 'react';
 import { View, Button, Text} from 'native-base';
+import styles from 'styles/HomeScreenStyle';
 
 export default function HomeScreen({ navigation }){
-  console.log('haha');
+  const handelResource = (targetPage) => {
+    navigation.navigate(targetPage);
+  }
   return (
-    <Text style={{color: 'red'}}>hello</Text>   
+    <View style={styles.homeView}>
+      <Button 
+        style={styles.resourceButton}
+        onPress={() => navigation.navigate('CreateBillScreen')}>
+        <Text style={styles.resourceButtonText}>Enter bill manually</Text>
+      </Button>
+      <Button 
+        style={styles.resourceButton}
+        onPress={() => navigation.navigate('PhotoUploadScreen')}>
+        <Text  style={styles.resourceButtonText}>Extract bill from photo</Text>
+      </Button>
+    </View>
   )
 }

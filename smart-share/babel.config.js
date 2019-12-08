@@ -24,6 +24,10 @@ module.exports = function(api) {
               rootPathPrefix: 'reducers/'
             },
             {
+              rootPathSuffix: './src/styles',
+              rootPathPrefix: 'styles/'
+            },
+            {
               rootPathSuffix: './assets',
               rootPathPrefix: 'assets/'
             }
