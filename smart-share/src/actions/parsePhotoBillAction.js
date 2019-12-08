@@ -4,7 +4,6 @@ import TESTBILL from '../testData/testBill';
 export default function parsePhotoBillAction(billImage) {
   return async function (dispatch) {
     try {
-      console.log(billImage);
       const response = await fetch(`https://api.ocr.space/parse/image`, {
         method: 'POST',
         headers: {

@@ -21,7 +21,7 @@ function CreateBillScreen({ navigation, updatePeopleCount, updateItems, itemInfo
   const navToNextPage = () => {
     updatePeopleCount(parseInt(numberOfPeople));
     updateItems(inputedItems);
-    navigation.navigate('SelectPage');
+    navigation.navigate('ResultScreen');
   }
 
   return (
@@ -35,6 +35,7 @@ function CreateBillScreen({ navigation, updatePeopleCount, updateItems, itemInfo
         />
       </View>
 
+<<<<<<< HEAD
       <View style={{backgroundColor: 'white', marginLeft: 24, marginRight: 24, height: '76%', borderRadius: 10, padding: 10, marginBottom: 24}}>
         <Text >Items</Text>
         <Content style={styles.itemContent}>
@@ -50,6 +51,20 @@ function CreateBillScreen({ navigation, updatePeopleCount, updateItems, itemInfo
         </Content>
       </View>
       <Button onPress={navToNextPage}><Text>CREATE!</Text></Button>
+=======
+      <Text >Items</Text>
+      <Content style={styles.itemContent}>
+        {Object.keys(inputedItems).map(key => 
+          <Input
+            key={key}
+            value={key}
+            onChange={(event) => resetItemKey(event, key)}
+            style={styles.itemInput}
+          />
+        )}
+      </Content>
+      <Button onPress={navToNextPage}><Text>Create</Text></Button>
+>>>>>>> a6d4487794611c32e220079a94ff0bdc792da0bf
     </Container>
   );
 }

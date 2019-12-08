@@ -17,7 +17,7 @@ function SelectPage({ addNewUser, itemInfo, users, peopleCount, updateItemCount,
   function handleVerify() {
     if (users.length === peopleCount) {
       updateItemCount(users);
-      navigation.navigate('ResultScreen');
+      navigation.navigate('ResultScreen')
     } else {
       addNewUser();
     }
