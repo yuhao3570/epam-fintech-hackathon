@@ -1,5 +1,5 @@
 const OCR_KEY = '43419a48f388957';
-import TESTBILL from '../testBill';
+import TESTBILL from '../testData/testBill';
 
 export default function parsePhotoBillAction(billImage) {
   return async function (dispatch) {
