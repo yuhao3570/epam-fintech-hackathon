@@ -17,8 +17,16 @@ const addOneItem = (userId, itemId) =>({
   }
 });
 
+const addAllItems = userId => ({
+  type: 'ADD_ALL_ITEMS',
+  payload: {
+    userId
+  }
+});
+
 export default {
   addUser,
   addNewUser,
-  addOneItem
+  addOneItem,
+  addAllItems
 }

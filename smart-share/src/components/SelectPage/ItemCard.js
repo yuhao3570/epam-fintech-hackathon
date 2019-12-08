@@ -6,20 +6,19 @@ import { connect } from 'react-redux';
 import styles from './styles/itemCard';
 import actions from 'actions/users';
 
-function ItemCard({ id, addOneItem, userId }) {
+function ItemCard({ id, addOneItem, userId, updateItemCount }) {
 	const [selected, setSelected] = useState(false);
 
 	return (
-		<TouchableOpacity activeOpacity={1} onPress={() => {setSelected(!selected); addOneItem(userId, id)}}>
+		<TouchableOpacity activeOpacity={1} onPress={() => {setSelected(!selected); addOneItem(userId, id);}}>
 			<Card style={[styles.card, selected && styles.selectedCard]}>
-				<Text style={styles.contentText}>{id}</Text>
+				<Text style={[styles.contentText, selected && styles.selectedText]}>{id}</Text>
 			</Card>
 		</TouchableOpacity>
 	);
 }
 
 const mapDispatchToProps = dispatch => ({
-  updatecount: (key)=> {},
 	addOneItem: (userId, itemId) => dispatch(actions.addOneItem(userId, itemId)) 
 });
 
