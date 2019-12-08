@@ -11,6 +11,9 @@ const pairs = {
       copy[action.payload.userId].selected.push(action.payload.itemId);
     }
     return copy;
+  },
+  ADD_ALL_ITEMS: (state, action) => {
+    
   }
 }
 

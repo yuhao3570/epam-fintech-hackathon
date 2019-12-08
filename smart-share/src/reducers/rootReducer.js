@@ -11,7 +11,7 @@ function setReducer(state, action, pairs) {
 }
 
 const rootReducer = combineReducers({
-  peopleCount: (state = [], action) => setReducer(state, action, peopleCount),
+  peopleCount: (state = 3, action) => setReducer(state, action, peopleCount),
   items: (state = testBill, action) => setReducer(state, action, items),
   users: (state = [], action) => setReducer(state, action, users),
 });
